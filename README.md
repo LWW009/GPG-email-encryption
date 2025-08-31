@@ -1,0 +1,7 @@
+# 💡
+#### GPG Trust Model
+In the absence of PKI and CA, how does GPG establish trust?
+> When using GPG, both the sender and receiver are free to generate key pairs for their own use. A CA acts as an authority to verify the trustworthiness of a public key - whether the public key belongs to its authenticated issuer. The Web of Trust model addresses similar problems, such as :*"How do i know the public key I received is a reliable one?"* In this case, if the relationship between, for example, the "broswer" and the "server" is personalized (or say 'decentralized'), and there is no need to be certified to prove each other's identity, then the CA can be skipped.
+---
+How does the public key signing process work with GPG?
+> Save the public key as an on-premises .txt file, and then import the key into GPG to get its fingerprint. Double-check the fingerprint with the sender to see if matches the one received (vice versa). If it matches, the receiver can then sign the sender's public key with their own private key. When a message or a key is signed, GPG generates a cryptographic signature using the sender's private key. This signature is unique to both the content and the sender. If any part of the message or the signed key is altered, the signature check will fail.
